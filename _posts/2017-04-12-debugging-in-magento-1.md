@@ -4,7 +4,7 @@ title: "Debugging in Magento 1"
 date: 2017-04-12 11:18:03
 image: '/assets/img/'
 description: "Debugging Magento can be a nightmare, here are some tips."
-main-class: 'magento1'
+main-class: 'magento 1'
 color: '#B31917'
 tags:
 - Magento 1
