@@ -16,9 +16,9 @@ twitter_text: 'Using Xdebug and Qcachegrind to profile in Magento 1'
 introduction: "Debugging performance issues in Magento can be a nightmare, here are some tips."
 ---
 
-Lets face it, not all developers are created equal.  Moreso, Magento being such a popular platform, suddenly everyone thinks they are a Magento developer, same thing happened with the Wordpress platform as well.  People who should not even call themselves developers are on sites like Upwork, Freelancer, and PeoplePerHour, hawking there substandard and, quite frankly, dangerous, services.  These freshers that have no idea what they are doing, however, from reading their profiles you
+Lets face it, not all developers are created equal.  More so, Magento being such a popular platform, suddenly everyone thinks they are a Magento developer, same thing happened with the Wordpress platform as well.  People who should not even call themselves developers are on sites like Upwork, Freelancer, and PeoplePerHour, hawking there substandard and, quite frankly, dangerous, services.  These freshers that have no idea what they are doing, however, from reading their profiles you
 cannot tell this, they have good multiple reviews, they have projects, is that good enough? Well you have to think, the people reviewing them have absolutely no idea what code they wrote.  They have no idea if it is spagetti code or legitimate code.  Sure, their function which they hired that person for may "work", but does it work in all corner cases? Is it optimized, did their normally fast site suddenly start taking many seconds to load in certain areas? When they left the review, it
-was most likely a cursory user functionality test of what they implemented. The reviewer probably wouldn't notice the performance degredation, or other issues until well after the review was left.
+was most likely a cursory user functionality test of what they implemented. The reviewer probably wouldn't notice the performance degradation, or other issues until well after the review was left.
 
 *If performance and speed matter to you, do not hire from these freelancer sites. Period.*
 
@@ -26,7 +26,7 @@ I only make the above comment due to the statistics of finding a Magento program
 
 There is one site however that is trying to put together the real Magento Specialists in one place, it is called [commercehero.io](https://commercehero.io).
 
-Sadly, I have even seen agencies implement code that severely impacts performance in Magento, so it isn't limited to just freelancers.  So, one needs to do their homework thoughly, ensure they are hiring a dev that knows how to spot bad performance inhibiting code.
+Sadly, I have even seen agencies implement code that severely impacts performance in Magento, so it isn't limited to just freelancers.  So, one needs to do their homework thoroughly, ensure they are hiring a dev that knows how to spot bad performance inhibiting code.
 
 Ok, I am off my soapbox, for now.  This article is an attempt to let the average person see what it takes to profile a site for performance and then track down the code that is causing the performance hit.
 
@@ -68,7 +68,7 @@ xdebug.profiler_append=1
 Generally, servers that are used to to serve ecommerce sites are headless, meaning, they do not have a GUI to navigate or run programs that depend on graphics.  So I install xdebug on the server which has the site I want to profile, and Qcachegrind on my local computer. I then rsync the files that were created when I navigated to the site with Profiling enabled in Xdebug Helper Chrome Extension, if you notice these files are saved in the directory I stated in
 `xdebug.profiler_output_dir` or `/home/<user>/php_profile/` Another note, the output file name must start with `callgrind` such as what I have in `xdebug.profiler_output_name=callgrind.out.%t` this is due to the Qcachegrind program only seeing files called callgrind.
 
-So, once you have your callgrind file downloaded from the server and opened in Qcachegrind you will see something similiar below. It takes a little while to get used to reading the results, so do not fret if you do not understand immediately what all this information means.
+So, once you have your callgrind file downloaded from the server and opened in Qcachegrind you will see something similar below. It takes a little while to get used to reading the results, so do not fret if you do not understand immediately what all this information means.
 
 <div style="width: 400px; margin: 0 auto">
 <blockquote class="imgur-embed-pub" lang="en" data-id="DWLh6B7"><a href="//imgur.com/DWLh6B7"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
@@ -80,7 +80,7 @@ Start by sorting "Self" or "Incl." in the function-list, this will put the funct
 Find the function that takes the most time to load, checking both "self" and "incl" and not the one with the biggest "incl."
 Follow the bread crumbs from there.
 
-Note, Qcachegrind's Source code view is awesome, however only works if the application being profiled is on the same computer as where the profile file originated. THus Rsync'ing the file from a remote computer to your local one, will disable the ability to use the Source code viewing functionality of Qcachegrind, so you will have to manually open the file with the bad code and look for it, chances are you will find something horrible in a foreach loop like below:
+Note, Qcachegrind's Source code view is awesome, however only works if the application being profiled is on the same computer as where the profile file originated. Thus Rsync'ing the file from a remote computer to your local one, will disable the ability to use the Source code viewing functionality of Qcachegrind, so you will have to manually open the file with the bad code and look for it, chances are you will find something horrible in a foreach loop like below:
 
 ```
  foreach($where as $_id) {
