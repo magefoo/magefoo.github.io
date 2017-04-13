@@ -70,7 +70,7 @@ Generally, servers that are used to to serve ecommerce sites are headless, meani
 
 So, once you have your callgrind file downloaded from the server and opened in Qcachegrind you will see something similiar below. It takes a little while to get used to reading the results, so do not fret if you do not understand immediately what all this information means.
 
-![Qcachegrind Output](https://www.dropbox.com/s/ko7oc7mrq4cicmm/Screenshot%20from%202017-04-09%2009-10-39.png?dl=0)
+![Qcachegrind Output](http://imgur.com/a/VFuQU)
 
 Finally, the steps to find what you are looking for.
 
