@@ -12,7 +12,7 @@ categories:
 - Magento 1
 - Debugging
 - Xdebug
-twitter_text: 'Debugging in Magento 1'
+twitter_text: 'Using Xdebug and Qcachegrind to profile in Magento 1'
 introduction: "Debugging performance issues in Magento can be a nightmare, here are some tips."
 ---
 
