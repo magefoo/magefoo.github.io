@@ -55,7 +55,9 @@ It will look something like this:
 
 Next create the required directories and files
 `mkdir -p app/design/frontend/Magentofu/jessie/etc/`
+
 `mkdir -p app/design/frontend/Magentofu/jessie/web/css/source/`
+
 `mkdir -p app/design/frontend/Magentofu/jessie/media/`
 
 Your directory structure will eventually look like this:
@@ -86,8 +88,11 @@ app/design/frontend/<Vendor_Namespace>/<theme_dir>/
 
 Create the required files:
 `touch app/design/frontend/Magentofu/jessie/composer.json`
+
 `touch app/design/frontend/Magentofu/jessie/registration.php`
+
 `touch app/design/frontend/Magentofu/jessie/theme.xml`
+
 `touch app/design/frontend/Magentofu/jessie/etc/view.xml` (optional)
 
 #### Sample `composer.json`

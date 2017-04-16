@@ -22,6 +22,8 @@ Although Magento does a good job in describing how to setup a development enviro
 
 *Important! Never ever run any bin/magento commands as root user! You will screw up the permissions of the generated files and Magento 2 will do a whole lot os screwy stuff!*
 
+For reference, a better explaination of things can be found in the [Magento 2 DevDocs: Install the Magento software]( http://devdocs.magento.com/guides/v2.1/install-gde/install/cli/install-cli-install.html)
+
 #### Workflow
 1.  Decide which flavor of Linux to use.
 2.  Nginx or Apache?
@@ -67,11 +69,17 @@ To make this easy, I am linking to the [Github Repo](https://github.com/magentof
 
 #### Five -- Create Database.
 Here are the commands to create a database in CLI.
+
 `mysql -uroot -p`
+
 `CREATE DATABASE <name>;`
+
 `CREATE USER '<name>'@'localhost' IDENTIFIED BY '<password>';`
+
 `GRANT ALL PRIVILEGES ON <database_name>.* TO '<user_name>'@'localhost';`
+
 `FLUSH PRIVILEGES;`
+
 `exit`
 
 #### Six -- Set permissions of directory
@@ -89,6 +97,7 @@ For nginx we just set up, this will be what we set it as in nginx.conf which is 
 `grep -i '^user' /etc/nginx/nginx.conf`
 or
 `grep -i '^user' /etc/httpd/conf/httpd.conf`
+
 `grep -i '^group' /etc/httpd/conf/httpd.conf`
 
 Add Magento file system owner to the web server's group.
@@ -156,6 +165,7 @@ For security, remove write permissions from these directories: '/path/to/magento
 
 Now, lets set the permissions for the Magento files.
 `find . -type f -exec chmod 644 {} \;`
+
 `find . -type d -exec chmod 755 {} \;`
 
 You should now be able to navigate to the frontend of your store
