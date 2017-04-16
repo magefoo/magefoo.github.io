@@ -8,10 +8,10 @@ main-class: 'Magento 2'
 color: '#000000'
 tags:
 - Magento 2
-- Theming
+- Theme
 categories:
 - Magento 2
-- Theming
+- Theme
 twitter_text: 'Magento 2 Theme Directory Structure'
 introduction: "A Magento 2 Skeleton Theme"
 ---
