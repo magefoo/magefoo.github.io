@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Create a Custom Theme in Magento 2"
+title: "Creating the skeleton directory structure for Theming in Magento 2"
 date: 2017-04-16 12:59:58
 image: '/assets/img/'
 description: 'Magento 2 theme directory structure'
@@ -13,7 +13,7 @@ categories:
 - Magento 2
 - Theming
 twitter_text: 'Magento 2 Theme Directory Structure'
-introduction: "How to Intialize a Theme in Magento 2"
+introduction: "A Magento 2 Skeleton Theme"
 ---
 
 There are a few things that need to happen, when creating a custom theme in Magento 2.  We will layout a game plan, then walk through each aspect of the creation of a custom theme.
