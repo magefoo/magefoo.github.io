@@ -22,7 +22,7 @@ Although Magento does a good job in describing how to setup a development enviro
 
 *Important! Never ever run any bin/magento commands as root user! You will screw up the permissions of the generated files and Magento 2 will do a whole lot os screwy stuff!*
 
-For reference, a better explaination of things can be found in the [Magento 2 DevDocs: Install the Magento software using the command line](http://devdocs.magento.com/guides/v2.1/install-gde/install/cli/install-cli.html)
+For reference, a better explanation of things can be found in the [Magento 2 DevDocs: Install the Magento software using the command line](http://devdocs.magento.com/guides/v2.1/install-gde/install/cli/install-cli.html)
 
 #### Workflow
 1.  Decide which flavor of Linux to use.
