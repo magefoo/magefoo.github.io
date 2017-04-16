@@ -8,6 +8,7 @@ main-class: 'magento 1'
 color: '#B31917'
 tags:
 - Magento 1
+- Debugging
 categories:
 - Magento 1
 - Debugging
