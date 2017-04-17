@@ -16,11 +16,21 @@ twitter_text: 'Adding log statements in Magento 2'
 introduction: "Just a quickie on how to add a log statement in Magento 2"
 ---
 
-In Magento 1, logging was simple, add `Mage:log($var, null, 'test.log');` anywhere you needed to know something.
+In Magento 1, logging was pretty simple, we add `Mage:log($var, null, 'test.log');` anywhere you needed to know something.
 
-With dependancy injection in Magento, things are a little different. There are two main ways to log thing.
+With dependancy injection in Magento 2, things are a little different. 
 
-Normally, if the logger is already injected, I'll just hijack it and use it, if it is not, I'll inject it like below:
+There are two main ways to log things.
+
+Injecting `\Psr\Log\LoggerInterface` or using the `\Zend\Log\Writer` class.
+
+Normally, if the logger is already injected, I'll just hijack it and use it:
+
+```
+$this->logger->debug($var);
+```
+
+If not, just declare it and use it:
 
 ```
 \Magento\Framework\App\ObjectManager::getInstance()
@@ -38,7 +48,7 @@ $logger->info('Your text message');
 
 How do you know if the logger is already injected?
 
-Look for the `$logger` variable in the file you are attempting to log from, and in the constructor.
+Look for the `$logger` variable in the class you are attempting to log from, and in the constructor.
 
 ```
  /**
@@ -65,7 +75,7 @@ Look for the `$logger` variable in the file you are attempting to log from, and 
      }
 ```
 
-If this is the case, then just hijack it and use 
+If this is the case, then just hijack it and use: 
 
 ```
 $this->logger->debug($var);
