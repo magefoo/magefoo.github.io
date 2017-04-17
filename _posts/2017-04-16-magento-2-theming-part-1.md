@@ -141,7 +141,6 @@ It is pretty simple to remove items, we just find the handle of the block we wan
     <body>
         <referenceBlock name='report.bugs' remove='true'/>
         <referenceBlock name='top.search' remove='true' />
-        <referenceBlock name='minicart' remove='true' />
     </body>
 </page>
 ```
