@@ -24,36 +24,40 @@ There are a few things that need to happen, when creating a custom theme in Mage
 
 For reference, follow along in the [Magento DevDocs: Frontend Developer Guide](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html)
 
-This is for a initial skeleton theme, more on how to manipulate design a theme in multiple other posts.
+This is for a initial skeleton theme, there will be follow-up articles delving deeper into Magento 2 Theme development later, so check back often! 
 
-*IMPORTANT! Only the Vendor_Namespace is Capitalized when creating the directory structure, the theme name directory, is not.*
+*IMPORTANT! Only the Vendor Namespace is Capitalized when creating the directory structure, the theme name directory, is not.*
 
-It is important to note that for a Magento 2 Module, the Vendor Namespace and Module Name are capitalized, however for a theme directory structure, only the Vednor Namespace is capitalized the theme name directory is not.
+It is important to note, for a Magento 2 Module, the Vendor Namespace and Module Name directories are capitalized, however for a theme directory structure, only the Vendor Namespace is capitalized the theme name directory is not.
 
 For example, the correct way:
+
 `app/design/frontend/Magentofu/jessie`
 
-If I were to capitalize `jessie` it would cause problems for me using grunt and for other things down the road, so don't capitalize your theme name directory, which is the directory right under your Vendor Name directory, which is capitalized.
+If I were to capitalize `jessie` it would cause problems for me using Grunt and also for other things down the road, so don't capitalize your theme directory, which is the directory right under the Vendor directory, which is capitalized.
 
-If you forget this, and then intialize your theme, there will be database entries created using the directory structure as the theme name.
+If you forget this, and intialize your theme, there will be database entries created using the directory structure.
 
-Remember if you want to delete a theme, use the `bin/magento theme:uninstall` command and do not just delete the directory structure, you still have database entries which will screw everything up!
+If you then decide to delete a theme, use the `bin/magento theme:uninstall` command, do not just delete the directory structure, as database entries still exist for the theme!
 
 If you forget and delete the directory structure manually, you will need to delete the database entries as well. You can do this by following the directions here: [Delete Theme Manually Article here](http://magento.fu/deleting-a-theme-in-magento-2)
 
 #### One -- Decide what to use as the parent theme.
-In Magento 2 like Magento 1, themes fallback and recurse through a theme hierarchy.  The difference between Magento 2 and Magento 1 is, Magento 2, you decide which theme is the parent theme, then it only falls back to the parent theme, then the parent falls back to the parent theme named for it.
 
-It is important to note, the final fallback theme is not actually a theme, but a module, `vendor/magento/module-theme/` I know, right?
+In Magento 2 like Magento 1, themes fallback and recurse through a theme hierarchy.  The difference between Magento 2 and Magento 1 is, Magento 2, you decide which theme is the parent theme, then it only falls back to the parent theme, the parent theme falls back to its parent, etc.
+
+It is important to note, the final fallback theme is not actually a theme, but the modules which the theme extends, for example, Magento_Theme, extends from `vendor/magento/module-theme/` I know, right? So all those Directories in your theme? Are the modules your theme extends from. Remember this.
 
 #### Two -- Create the custom theme directory structure.
 
 *Remember to keep you theme name directory lowercase and only your Vendor Directory Uppercase*
 
 It will look something like this:
+
 `mkdir -p app/design/frontend/Magentofu/jessie/`
 
 Next create the required directories and files
+
 `mkdir -p app/design/frontend/Magentofu/jessie/etc/`
 
 `mkdir -p app/design/frontend/Magentofu/jessie/web/css/source/`
@@ -87,6 +91,7 @@ app/design/frontend/<Vendor_Namespace>/<theme_dir>/
 ```
 
 Create the required files:
+
 `touch app/design/frontend/Magentofu/jessie/composer.json`
 
 `touch app/design/frontend/Magentofu/jessie/registration.php`
@@ -180,172 +185,10 @@ Create the required files:
                     <width>165</width>
                     <height>165</height>
                 </image>
-                <image id="category_page_grid" type="small_image">
-                    <width>240</width>
-                    <height>300</height>
-                </image>
-                <image id="category_page_grid-1" type="small_image">
-                    <width>240</width>
-                    <height>300</height>
-                </image>
-                <image id="category_page_list" type="small_image">
-                    <width>240</width>
-                    <height>300</height>
-                </image>
-                <image id="customer_account_my_tags_tag_view" type="small_image">
-                    <width>100</width>
-                    <height>100</height>
-                </image>
-                <image id="customer_account_product_review_page" type="image">
-                    <width>285</width>
-                    <height>285</height>
-                </image>
-                <image id="customer_shared_wishlist" type="small_image">
-                    <width>113</width>
-                    <height>113</height>
-                </image>
-                <image id="gift_messages_checkout_small_image" type="small_image">
-                    <width>75</width>
-                    <height>75</height>
-                </image>
-                <image id="gift_messages_checkout_thumbnail" type="thumbnail">
-                    <width>100</width>
-                    <height>100</height>
-                </image>
-                <image id="mini_cart_product_thumbnail" type="thumbnail">
-                    <width>75</width>
-                    <height>75</height>
-                </image>
-                <image id="new_products_content_widget_grid" type="small_image">
-                    <width>240</width>
-                    <height>300</height>
-                </image>
-                <image id="new_products_content_widget_list" type="small_image">
-                    <width>270</width>
-                    <height>340</height>
-                </image>
-                <image id="new_products_images_only_widget" type="small_image">
-                    <width>78</width>
-                    <height>78</height>
-                </image>
-                <image id="product_base_image" type="image">
-                    <width>265</width>
-                    <height>265</height>
-                </image>
-                <image id="product_comparison_list" type="small_image">
-                    <width>140</width>
-                    <height>140</height>
-                </image>
-                <image id="product_page_image_large" type="image"/>
-                <image id="product_page_image_medium" type="image">
-                    <width>700</width>
-                    <height>560</height>
-                </image>
-                <image id="product_page_image_small" type="thumbnail">
-                    <width>88</width>
-                    <height>110</height>
-                </image>
-                <image id="product_page_main_image" type="image">
-                    <width>700</width>
-                    <height>560</height>
-                </image>
-                <image id="product_page_main_image_default" type="image">
-                    <width>700</width>
-                    <height>560</height>
-                </image>
-                <image id="product_page_more_views" type="thumbnail">
-                    <width>88</width>
-                    <height>110</height>
-                </image>
-                <image id="product_stock_alert_email_product_image" type="small_image">
-                    <width>76</width>
-                    <height>76</height>
-                </image>
-                <image id="product_small_image" type="small_image">
-                    <width>135</width>
-                    <height>135</height>
-                </image>
-                <image id="product_thumbnail_image" type="thumbnail">
-                    <width>75</width>
-                    <height>75</height>
-                </image>
-                <image id="recently_compared_products_grid_content_widget" type="small_image">
-                    <width>240</width>
-                    <height>300</height>
-                </image>
-                <image id="recently_compared_products_images_names_widget" type="thumbnail">
-                    <width>75</width>
-                    <height>90</height>
-                </image>
-                <image id="recently_compared_products_images_only_widget" type="thumbnail">
-                    <width>76</width>
-                    <height>76</height>
-                </image>
-                <image id="recently_compared_products_list_content_widget" type="small_image">
-                    <width>270</width>
-                    <height>340</height>
-                </image>
-                <image id="recently_viewed_products_grid_content_widget" type="small_image">
-                    <width>240</width>
-                    <height>300</height>
-                </image>
-                <image id="recently_viewed_products_images_names_widget" type="small_image">
-                    <width>75</width>
-                    <height>90</height>
-                </image>
-                <image id="recently_viewed_products_images_only_widget" type="small_image">
-                    <width>76</width>
-                    <height>76</height>
-                </image>
-                <image id="recently_viewed_products_list_content_widget" type="small_image">
-                    <width>270</width>
-                    <height>340</height>
-                </image>
-                <image id="related_products_list" type="small_image">
-                    <width>152</width>
-                    <height>190</height>
-                </image>
-                <image id="review_page_product_image" type="small_image">
-                    <width>285</width>
-                    <height>285</height>
-                </image>
-                <image id="rss_thumbnail" type="thumbnail">
-                    <width>75</width>
-                    <height>75</height>
-                </image>
-                <image id="sendfriend_small_image" type="small_image">
-                    <width>75</width>
-                    <height>75</height>
-                </image>
-                <image id="shared_wishlist_email" type="small_image">
-                    <width>135</width>
-                    <height>135</height>
-                </image>
-                <image id="side_column_widget_product_thumbnail" type="thumbnail">
-                    <width>75</width>
-                    <height>90</height>
-                </image>
-                <image id="upsell_products_list" type="small_image">
-                    <width>152</width>
-                    <height>190</height>
-                </image>
-                <image id="wishlist_sidebar_block" type="thumbnail">
-                    <width>75</width>
-                    <height>90</height>
-                </image>
-                <image id="wishlist_small_image" type="small_image">
-                    <width>113</width>
-                    <height>113</height>
-                </image>
-                <image id="wishlist_thumbnail" type="small_image">
-                    <width>240</width>
-                    <height>300</height>
-                </image>
             </images>
         </media>
     </view>
   ```
-
 
 You now have a Skeleton Theme that can be selected in Magento Admin.
 
