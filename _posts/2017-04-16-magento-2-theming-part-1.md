@@ -174,7 +174,9 @@ To create a new block, we would add it like so:
 #example from devdocs
 ```
 
-These are simple, but powerful, methods to change the layout.  They do get more complicated, which we will get into further down.
+### These are simple, but powerful, methods to change the layout.  
+
+They do get more complicated, which we will get into in another article.
 
 Next, we will touch on generic layout files.  The location of these files for themes will be `<theme_dir>/<Namespace>_<Module>/layout` and use the `<layout></layout>` instruction.  These are the ones that closest resemble what we remember in Magento 1.  We select a section of the block via a name such as "root" or "content" and add another block under it.
 
