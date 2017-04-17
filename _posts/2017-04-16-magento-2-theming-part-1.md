@@ -69,4 +69,127 @@ To override a theme layout file completely, here is again the directory structur
 *You will almost never have to override a parent theme layout file, extending the layout file of the parent theme is plenty in most cases.*
 
 #### Now that we have that out of the way, lets learn to remove items, move items, and generally do whatever when extending layout files.
-*UNFINISHED MORE TO COME*
+
+In Magento 2, to extend layout files their is new syntax that we need to learn. This new syntax can be found in the [Magento DevDocs: Layout instructions](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html).
+
+Use layout instructions to:
++  move a page element to another parent element
++  add content
++  remove a page element
+
+This is where it takes some practice, and a lot of examples to learn how to use the new syntax of the Layout Instructions.
+
+First though, we need to know where to put these instructions.
+
+We put the instructions in a file of the same name and under the same directory structure as the original we are trying to extend.
+
+Instead of rewriting everything in the [Magento DevDocs: Layout file types](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-types.html) I'll just link to them as they do a very good job in describing everything you need to know.
+
+The main take away is their are three types of layout files.
++ Page Layout
++ Page Configuration
++ Generic
+
+There is also different ways we declare each one of these and where they are found.
+
+We put Page Layout files generally under `<theme_dir>/<Namespace>_<Module>/layouts.xml`.
+
+Page layouts are the highest overview and change thing such as the 1 column, 2 column, with/without sidebar, etc.
+
+Generally these aren't changed, especially for a basic customized theme, but we add them here for clarification.  The layout file we really are interested in is the Page Configuration layout files.
+
+For Page Layout, we start the file with the ` <page_layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/PageLayout/etc/layouts.xsd">` scheme informtion, and continue with the `<layout></layout>` instruction.
+
+Here is an example:
+
+```
+<page_layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/PageLayout/etc/layouts.xsd">
+    <layout id="1column">
+        <label translate="true">1 column</label>
+    </layout>
+    <layout id="2columns-left">
+        <label translate="true">2 columns with left bar</label>
+    </layout>
+    <layout id="2columns-right">
+        <label translate="true">2 columns with right bar</label>
+    </layout>
+    <layout id="3columns">
+        <label translate="true">3 columns</label>
+    </layout>
+</page_layouts>
+```
+
+What we are really interested in, is the Page Configuration layout files, these are what change the blocks inside of the `<body>` tag.
+
+For themes, these will be found in `<theme_dir>/<Namespace>_<Module>/layout/` directory structure and named the same as the parent, such as in the Magento_Theme name space, we would name our file `default.xml`.
+
+Now where did `default.xml` come from? It isn't in the parent blank theme?  Well, remeber I said earlier, the final fallback of themes is actually `module-theme`, so if we look in `vendor/magento/module-theme/view/frontend/layout/` you will see the file we need to extend in `<theme_dir>Magento_Theme/layout/`, so we will add the file:
+`<Vendor>/<theme>/Magento_Theme/layout/default.xml`
+
+In 'default.xml', we then start with the xml schema, `<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">` and continue with the <body></body> instruction. For all the allowed instructions we can use in page configuration files see the [Page configuration structure and allowed layout instructions section of the
+DevDocs](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-types.html)
+
+It is pretty simple to remove items, we just find the handle of the block we want to remove and add the remove instruction like in the example below:
+
+```
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name='report.bugs' remove='true'/>
+        <referenceBlock name='top.search' remove='true' />
+        <referenceBlock name='minicart' remove='true' />
+    </body>
+</page>
+```
+
+But what if we do not want to simply remove the item, but move it to another parent block?  We use the `<move>` instuction to do this.
+
+We select the handle we want to move and the parent we want to move it under. Then we declare it like so `<move element="minicart" destination="top.container">`
+
+So, then our above example would then become:
+
+```
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name='report.bugs' remove='true'/>
+        <referenceBlock name='top.search' remove='true' />
+        <move element='minicart' destination="top.container" />
+    </body>
+</page>
+```
+
+To create a new block, we would add it like so:
+
+```
+<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
+    <arguments>
+        <argument name="at_call" xsi:type="string">getSku</argument>
+        <argument name="at_code" xsi:type="string">sku</argument>
+        <argument name="css_class" xsi:type="string">sku</argument>
+    </arguments>
+</block>
+#example from devdocs
+```
+
+These are simple, but powerful, methods to change the layout.  They do get more complicated, which we will get into further down.
+
+Next, we will touch on generic layout files.  The location of these files for themes will be `<theme_dir>/<Namespace>_<Module>/layout` and use the `<layout></layout>` instruction.  These are the ones that closest resemble what we remember in Magento 1.  We select a section of the block via a name such as "root" or "content" and add another block under it.
+
+An example from the DevDocs would be:
+
+```
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <update handle="formkey"/>
+    <update handle="adminhtml_googleshopping_types_block"/>
+    <container name="root">
+        <block class="Magento\Backend\Block\Widget\Grid\Container" name="googleshopping.types.container" template="Magento_Backend::widget/grid/container/empty.phtml"/>
+    </container>
+</layout>
+```
+
+Where class would be block type in Magento 1 and template is like the same in Magento 1, except obviously the declaration syntax of both is different.
+
+We link to the [Magento DevDocs again, for some final examples](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/xml-manage.html)
+
+In the end, it takes some practice and some understanding to get a handle on layout templates, after understanding them, they do become relatively easy to use, much like Magento 1 layout files.
+
+I cannot stress enough Magento's DevDocs, the documention for Magento 2 is a whole lot better than it was for Magento 1, if you follow along in the DevDocs, there isn't much that isn't explained, but it does take time and patience to understand. Better to do it right, than create situations in your storefront that cause errors and performance issues.
