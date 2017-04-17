@@ -8,10 +8,9 @@ main-class: 'dev'
 color: '#000000'
 tags:
 - Magento 2
-- Development
+- Dev
 categories:
 - Magento 2
-- Dev
 twitter_text: 'Some notes on setting up a local development environment for Magento 2'
 introduction: "Just some notes for setting up a local development environment for Magento 2"
 ---
