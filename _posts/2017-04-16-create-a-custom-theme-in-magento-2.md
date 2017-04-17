@@ -4,7 +4,7 @@ title: "Creating the skeleton directory structure for Theming in Magento 2"
 date: 2017-04-16 12:59:58
 image: '/assets/img/'
 description: 'Magento 2 theme directory structure'
-main-class: 'Magento 2'
+main-class: 'theme'
 color: '#000000'
 tags:
 - Magento 2

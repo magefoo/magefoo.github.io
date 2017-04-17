@@ -4,7 +4,7 @@ title: "Deleting a Theme in Magento 2"
 date: 2017-04-16 12:18:25
 image: '/assets/img/'
 description: 'Pointers when deleting a theme in Magento 2'
-main-class: 'Magento 2'
+main-class: 'general'
 color: '#000000'
 tags:
 - Magento 2

@@ -4,7 +4,7 @@ title: "Magento 2 Theming: Layout Files"
 date: 2017-04-16 11:06:16
 image: '/assets/img/'
 description: 'How to do stuff with Layout files in Magento 2'
-main-class: 'Magento 2'
+main-class: 'm2'
 color: '#000000'
 tags:
 - Magento 2

@@ -4,14 +4,14 @@ title: "Setup Development Environment for Magento 2"
 date: 2017-04-16 14:00:10
 image: '/assets/img/'
 description: 'My notes for setting up a local development environment for Magento 2'
-main-class: 'Magento 2'
+main-class: 'dev'
 color: '#000000'
 tags:
 - Magento 2
 - Development
 categories:
 - Magento 2
-- Development
+- Dev
 twitter_text: 'Some notes on setting up a local development environment for Magento 2'
 introduction: "Just some notes for setting up a local development environment for Magento 2"
 ---

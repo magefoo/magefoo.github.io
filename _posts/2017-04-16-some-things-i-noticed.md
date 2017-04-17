@@ -4,13 +4,13 @@ title: "A few things about Magento 2 to be aware of"
 date: 2017-04-16 14:09:03
 image: '/assets/img/'
 description: 'Just a few things I have noticed with Magento 2'
-main-class: 'Magento 2'
+main-class: 'misc'
 color: '#000000'
 tags:
 - Magento 2
 - Notes
 categories:
-- Magento 2
+- Misc
 - Notes
 twitter_text: 'A few things I have noticed while working with Magento 2'
 introduction: "Just a few things I have noticed while working with Magento 2"

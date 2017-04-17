@@ -4,14 +4,14 @@ title: "Adding log statements in Magneto 2"
 date: 2017-04-16 20:09:42
 image: '/assets/img/'
 description: 'Just q quickie on how to log specific thing in Magento 2'
-main-class: 'Magento 2'
+main-class: 'dev'
 color: '#000000'
 tags:
 - Magento 2
 - Debugging
+- Dev
 categories:
 - Magento 2
-- Debugging
 twitter_text: 'Adding log statements in Magento 2'
 introduction: "Just a quickie on how to add a log statement in Magento 2"
 ---

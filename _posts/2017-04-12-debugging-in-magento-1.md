@@ -4,15 +4,13 @@ title: "Using Xdebug and Qcachegrind to Profile in Magento 1"
 date: 2017-04-12 11:18:03
 image: '/assets/img/'
 description: "Using Xdebug and Qcachegrind to profile a Magento 1 store."
-main-class: 'magento 1'
+main-class: 'magento1'
 color: '#B31917'
 tags:
 - Magento 1
 - Debugging
 categories:
 - Magento 1
-- Debugging
-- Xdebug
 twitter_text: 'Using Xdebug and Qcachegrind to profile in Magento 1'
 introduction: "Debugging performance issues in Magento can be a nightmare, here are some tips."
 ---
