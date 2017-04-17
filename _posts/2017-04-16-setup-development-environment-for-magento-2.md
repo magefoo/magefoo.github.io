@@ -88,21 +88,28 @@ Add a user you would like to use as the Magento file system owner.
 *IMPORTANT! Never ever run any bin/magento commands as any other user other than file system owner, especially never ever run as root user! You will screw up your permissions on generated files, which may not be apparent initially but will give your problems later on.*
 
 As root user:
+
 `adduser <username>`
+
 `passwd <username>`
 
 Find the web server's user's group.
 For nginx we just set up, this will be what we set it as in nginx.conf which is generally `http` group. For apache check /etc/httpd/conf/httpd.conf for group.
+
 `grep -i '^user' /etc/nginx/nginx.conf`
+
 or
+
 `grep -i '^user' /etc/httpd/conf/httpd.conf`
 
 `grep -i '^group' /etc/httpd/conf/httpd.conf`
 
 Add Magento file system owner to the web server's group.
+
 `gpasswd -a <user> <group>`
 
 Now become the Magento file system user. Remember the warning!
+
 `su <username>`
 
 From here on out do not use root user, everything will be done as Magento file system user.
@@ -120,6 +127,7 @@ The Public Key will be used as `username` and the Private Key will be used as `p
 For reference [Get the Magento CE metapackage](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/integrator_install_ce.html)
 
 Navigate to your web root and install Magento via composer.
+
 `composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition .`
 
 You will then be prompted for a username and password, this will be the Public Key and Private Key respectively from your magentocommerce.com account.
@@ -135,6 +143,7 @@ Now, we actually install Magento 2.
 For reference [Install Magento 2 Software](http://devdocs.magento.com/guides/v2.1/install-gde/install/cli/install-cli.html)
 
 `chmod +x bin/magento`
+
 *you can also prefix the command with php ie php bin/magento*
 
 *IMPORTANT! ensure you are the Magento File System Owner User*
@@ -148,6 +157,7 @@ What you will need from the previous steps:
 Now we start:
 
 `cd /path/to/Magento_2/`
+
 `su <magento_user>`
 
 `php bin/magento setup:install --backend_frontname=my_admin --base-url=http://server_name --use-secure=0 --use-secure-admin=0 --db-name=<database_name> --db-user=<database_user> --db-password=<database_password> --admin-firstname=<Firstname> --admin-lastname=<Lastname> --admin-email=<user@example.com> --admin-user=admin --admin-password=<password> --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1`
@@ -163,12 +173,15 @@ For security, remove write permissions from these directories: '/path/to/magento
 ```
 
 Now, lets set the permissions for the Magento files.
+
 `find . -type f -exec chmod 644 {} \;`
 
 `find . -type d -exec chmod 755 {} \;`
 
 You should now be able to navigate to the frontend of your store
+
 `http://server_name`
+
 
 I have noticed that sometimes you must deploy static files if the css does not show properly, however, since you should be in developer mode, this should not be an issue, anyhow, if you cannot properly see your store:
 `php bin/magento setup:static-content:deploy`
@@ -189,26 +202,34 @@ Most Linux Disto's have Nodejs and Npm in their Official Repos, so check the doc
 
 *As root user*
 For CentOS:
+
 `yum install nodejs npm`
 
 For Arch Linux
+
 `pacman -S nodejs npm`
 
 For Ubuntu or Debian
+
 `apt-get install nodejs npm`
 
 Afterwards, install grunt-cli globally.
+
 `npm install -g grunt-cli`
 
 Next,  copy package.json.sample and Grunfile.js.sample to package.json and Gruntfile.js.
+
 `cp package.json.sample package.json`
+
 `cp Gruntfile.js.sample Gruntfile.js`
 
 Become Magento file system user
+
 `su <magento_user>`
 
 *As Magento User*
 Run Npm install.
+
 `npm install`
 
 Next, create your theme skeleton directories and files.
@@ -255,13 +276,16 @@ module.exports = {
 This file will be empty except for notes if you have not run grunt at least once, it will populate the Magento Blank, Magento Luma, and Backend Themes once grunt is run.
 
 To see live reload in action, install the Livereload Chrome extension in the next step and then run grunt exec:<theme>, then grunt watch.
+
 `grunt exec:<theme>`
+
 `grunt watch`
 
 Install the Chrome Livereload extension.
 [Get the extension here](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
 
 After the extension is installed, navigate to the store frontend
+
 `http://server_name`
 
 Then select the Livereload button, the center of the icon will become filled, and hovering over the icon will state "Livereload connected".
@@ -279,13 +303,17 @@ I'm only going to do a simple Git configuration here.  I will go more in depth o
 Install git based on your Linux Distro.
 
 Setup git configuration
+
 `git config --global user.name '<Your Name>'`
+
 `git config --global user.email '<Your Email>'`
 
 Change directory to the webroot.
+
 `cd /path/to/webroot/`
 
 Run git init.
+
 `git init`
 
 Setup a <b>private</b> repo on Github or Gitlab or Bitbucket. Note, Bitbucket has private repos for the free level while the others require a paid subscription for private repos.
@@ -392,14 +420,19 @@ atlassian*
 Or you can copy from [My github](https://gist.github.com/djfordz/336cf932e913daf9c6fa650e1d4198bb)
 
 Set the remote repository.
+
 `git remote add origin git@github.com:magentofu/<private_repository>.git`
 
 Next add all the files to your git repository.
+
 `git add .`
+
 `git commit -m "Initial Commit"`
+
 `git push --set-upstream origin master`
 
 Now, whenever you are working, you can checkout new repos, to ensure you keep track of your work
+
 `git checkout -b new_repo`
 
 *It is highly advisable to learn Git very well, Git is an awesome Version Control System and is used virtually everywhere. I will have another article explaining how to setup your own Git server as well as a Production Git environment soon, so check back regularly.*
