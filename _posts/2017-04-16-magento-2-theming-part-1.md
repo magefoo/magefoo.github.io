@@ -125,7 +125,13 @@ For themes, these will be found in `<theme_dir>/<Namespace>_<Module>/layout/` di
 
 Where did `default.xml` come from? It isn't in the parent blank theme?  Well, remember I said earlier, the final fallback of themes is actually `module-theme`, so if we look in `vendor/magento/module-theme/view/frontend/layout/` you will see the file we need to extend so we create a new file in `<theme_dir>/Magento_Theme/layout/default.xml`
 
-In 'default.xml', we then start with the xml schema, `<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">` and continue with one of the allowed instructions, such as the `<body></body>` instruction. For a list of allowed instructions we can use in page configuration files see the [Page configuration structure and allowed layout instructions section of the
+In `default.xml`, we then start with the xml schema:
+
+`<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">` 
+
+and continue with one of the allowed instructions, such as the `<body></body>` instruction. 
+
+For a list of allowed instructions we can use in page configuration files see the [Page configuration structure and allowed layout instructions section of the
 DevDocs](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-types.html)
 
 It is pretty simple to remove items, we just find the handle of the block we want to remove and add the remove instruction like in the example below:
