@@ -8,7 +8,7 @@ main-class: 'magento1'
 color: '#B31917'
 tags:
 - Magento 1
-- Debugging
+- Debug
 categories:
 - Magento 1
 twitter_text: 'Using Xdebug and Qcachegrind to profile in Magento 1'

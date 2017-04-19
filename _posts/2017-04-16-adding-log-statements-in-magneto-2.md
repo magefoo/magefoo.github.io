@@ -8,7 +8,7 @@ main-class: 'dev'
 color: '#000000'
 tags:
 - Magento 2
-- Debugging
+- Debug
 - Dev
 categories:
 - Magento 2
