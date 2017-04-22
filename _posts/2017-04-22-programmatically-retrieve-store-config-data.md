@@ -40,6 +40,7 @@ class Data extends AbstractHelper
 
 After creating the function in the helper, if the helper is not already injected in the file where you need to pull the config data, you will need to inject it like so.
 
+
 ```
 #app/code/Vendor/Module/Model/<filename>/php
 
@@ -63,6 +64,7 @@ class SomeClass
         return $emailAddress = $this->_helper->getConfig('general/contact/email');
     }
 }
+```
 
 To find the format of the configuration data you need to retrieve, go to the core module, for which the data needed is, and look in `vendor/magento/module-<name>/etc/adminhtml/system.xml` the format will be `section/group/field` so you are looking for `<section id="<section_name>"...`, `<group id="<group_name>"...`, and `<field id="<field_name"...`, just grab the id's and put them in order as the getConfig param i.e. `$this->helper->getConfig('section/group/field');`
 
