@@ -4,7 +4,7 @@ title: "Programmatically Retrieve Store Config Data"
 date: 2017-04-22 13:11:07
 image: '/assets/img/'
 description: 'Get the data you need from backend configuration'
-main-class: 'M2'
+main-class: 'm2'
 color: '#000000'
 tags:
 - Magento 2
