@@ -29,18 +29,13 @@ Images in `Vendor/theme/Vendor_Module/web/images` or `app/code/Vendor/Module/vie
 
 or if images are in `Vendor/theme/web/images/`
 
-```
-<img src="<?php echo $block->getViewFileUrl('images/image.png'); ?>" ?>
-```
+`<img src="<?php echo $block->getViewFileUrl('images/image.png'); ?>" ?>`
 
 For CMS Static Blocks or Pages:
 
 Images in `Vendor/theme/Vendor_Module/web/images` or `app/code/Vendor/Module/view/frontend/web/images/`
 
-```
-<img src="{ {view url='Vendor_Module::images/images.png'} }"/>
-#without the space between {{ this blog's handlebars preprocessor aparently parses it. So I could not make it exactly like magentos
-```
+`<img src="{{view url='Vendor_Module::images/images.png'}}"/>`
 
 or if images are in `Vendor/theme/web/images/`
 
