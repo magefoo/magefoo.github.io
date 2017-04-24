@@ -9,10 +9,10 @@ color: '#000000'
 tags:
 - Magento 2
 - Dev
--Quickie
+- Quickies
 categories:
 - Magento 2
-- Quickie
+- Quickies
 twitter_text: 'Magento 2 Getting an Image URL, the correct way.'
 introduction: "Magento 2 Getting an Image URL the correct way"
 ---
