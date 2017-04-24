@@ -1,15 +1,20 @@
 ---
 layout: post
-title: "Getting Image URL for template files"
+title: "Magento 2: Getting Image URL for template files and CMS Blocks"
 date: 2017-04-23 17:20:13
 image: '/assets/img/'
-description:
-main-class:
-color:
+description: 'Magento 2: Getting an Image URL.'
+main-class: 'm2'
+color: '#000000'
 tags:
+- Magento 2
+- Dev
+-Quickie
 categories:
-twitter_text:
-introduction:
+- Magento 2
+- Quickie
+twitter_text: 'Magento 2: Getting an Image URL, the correct way.'
+introduction: "Getting an Image URL the correct way"
 ---
 
 Just a quick on how to get image urls in both template files and cms blocks for Magento 2.
@@ -41,3 +46,5 @@ or if images are in `Vendor/theme/web/images/`
 ```
 <img src="{{view url='images/image.png'}}"/>
 ```
+
+That is it, so next time you need to get that image in place.
