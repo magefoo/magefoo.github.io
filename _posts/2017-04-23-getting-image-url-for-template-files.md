@@ -38,13 +38,15 @@ For CMS Static Blocks or Pages:
 Images in `Vendor/theme/Vendor_Module/web/images` or `app/code/Vendor/Module/view/frontend/web/images/`
 
 ```
-<img src="\{{view url='Vendor_Module::images/images.png'\}}"/>
+<img src="{ {view url='Vendor_Module::images/images.png'} }"/>
+#without the space between {{ this blog's handlebars preprocessor aparently parses it. So I could not make it exactly like magentos
 ```
 
 or if images are in `Vendor/theme/web/images/`
 
 ```
-<img src="\{{view url='images/image.png'\}}"/>
+<img src="{ { view url='images/image.png'} }"/>
+#without the space between {{ this blog's hadlebars preprocessor apparently parses it. So I could not make it exactly as you need for Magento 2.
 ```
 
 That is it, so next time you need to get that image in place.
