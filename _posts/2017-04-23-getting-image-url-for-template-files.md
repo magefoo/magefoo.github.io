@@ -29,7 +29,9 @@ Images in `Vendor/theme/Vendor_Module/web/images` or `app/code/Vendor/Module/vie
 
 or if images are in `Vendor/theme/web/images/`
 
-`<img src="<?php echo $block->getViewFileUrl('images/image.png'); ?>" ?>`
+```
+<img src="<?php echo $block->getViewFileUrl('images/image.png'); ?>" />
+```
 
 For CMS Static Blocks or Pages:
 
