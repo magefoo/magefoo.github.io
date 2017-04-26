@@ -9,10 +9,10 @@ color: '#000000'
 tags:
 - Magento 2
 - Dev
-- Quickie
+- Quickies
 categories:
 - Magento 2
-- Quickie
+- Quickies
 twitter_text: 'Get the data you need from backend configuration'
 introduction: "Get the data you need from backend Configuration"
 ---
