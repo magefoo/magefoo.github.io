@@ -4,7 +4,7 @@ title: "Magento 2 Getting Image URL for template files and CMS Blocks"
 date: '2017-04-23 17:20:13'
 image: '/assets/img/'
 description: 'Magento 2 Getting an Image URL.'
-main-class: 'm2'
+main-class: 'quickie'
 color: '#000000'
 tags:
 - Magento 2

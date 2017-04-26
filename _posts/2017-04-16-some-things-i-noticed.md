@@ -11,7 +11,7 @@ tags:
 - Notes
 categories:
 - Misc
-- Notes
+- Magento 2
 twitter_text: 'A few things I have noticed while working with Magento 2'
 introduction: "Just a few things I have noticed while working with Magento 2"
 ---

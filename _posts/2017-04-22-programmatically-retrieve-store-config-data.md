@@ -4,13 +4,15 @@ title: "Programmatically Retrieve Store Config Data"
 date: 2017-04-22 13:11:07
 image: '/assets/img/'
 description: 'Get the data you need from backend configuration'
-main-class: 'm2'
+main-class: 'quickie'
 color: '#000000'
 tags:
 - Magento 2
-- Develop
+- Dev
+- Quickie
 categories:
 - Magento 2
+- Quickie
 twitter_text: 'Get the data you need from backend configuration'
 introduction: "Get the data you need from backend Configuration"
 ---
