@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Magento 1 Module File Structure"
-date: 2017-04-28 01:48:04
+date: '2017-04-28 01:48:04'
 image: '/assets/img/'
 description: "File structure for Magento 1 Module"
 main-class: `magento1`
