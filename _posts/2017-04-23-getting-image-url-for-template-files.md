@@ -38,7 +38,7 @@ For CMS Static Blocks or Pages:
 Images in `Vendor/theme/Vendor_Module/web/images` or `app/code/Vendor/Module/view/frontend/web/images/`
 
 ```
-<img src="{{ "{{view url='images/image.png'"}}}}"/>
+<img src="{{ "{{view url='Vendor_Module::images/image.png'"}}}}"/>
 ```
 
 or if images are in `Vendor/theme/web/images/`
