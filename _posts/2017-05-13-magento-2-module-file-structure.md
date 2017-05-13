@@ -23,12 +23,12 @@ First, an overview of the directory structure.  There will are two places that M
 
 Magento 2 has a repository full of sample modules, so go ahead and head over to [https://github.com/magento/magento2-samples](https://github.com/magento/magento2-samples).
 
-*Configuration files
+Configuration files
 
 Configuration files that are in the top level of that module’s etc directory are global to that component.
-Configuration files placed in subdirectories (adminhtml, frontend, webapi_rest, webapi_soap) apply only to those respective functional areas.*
+Configuration files placed in subdirectories (adminhtml, frontend, webapi_rest, webapi_soap) apply only to those respective functional areas.
 
-### It is very important to note that directory and file structure is case sensitive and MUST follow the exact Case which is laid out, please look for either <vendor> or <Vendor>,  <module> or <Module> also, to note, Magento 2 Modules, the `app/code/Vendor/Module/` directories are both Capitalized but theme directories ONLY the `app/design/Vendor/themename/` is capitalized, the theme name is not.
+*It is very important to note that directory and file structure is case sensitive and MUST follow the exact Case which is laid out, also, to note, in Magento 2 Modules, the `/Vendor/Module/` directories are both Capitalized but theme directories ONLY the Vendor is capitalized, the theme name is not `/Vendor/themename/`. Remember themes are under `app/design/` and modules are under `app/code/`*
 
 ```
 # required files `*`
