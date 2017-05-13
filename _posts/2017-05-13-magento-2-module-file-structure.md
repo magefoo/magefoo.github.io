@@ -31,6 +31,79 @@ Configuration files placed in subdirectories (adminhtml, frontend, webapi_rest, 
 *It is very important to note that directory and file structure is case sensitive and MUST follow the exact Case which is laid out, also, to note, in Magento 2 Modules, the `/Vendor/Module/` directories are both Capitalized but theme directories ONLY the Vendor is capitalized, the theme name is not `/Vendor/themename/`. Remember themes are under `app/design/` and modules are under `app/code/`*
 
 ```
+<Magento Root>/app/code/Vendor/Module/
+                                |   registration.php
+                                |   composer.json
+                                |
+                                /etc/
+                                    module.xml
+```
+
+Next, the module must be registered in the Magento System, this is done with the `ComponentRegistrar` Class in the `registration.php` file in the root of the module directory.
+
+```
+<?php
+
+use \Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(ComponentRegistrar::MODULE, '<Vendor>_<ModuleName>', __DIR__);
+
+```
+
+After adding the `registration.php` file, the module's `composer.json file must be created.
+
+```
+{
+  "name": "<vendor>/<module>",
+  "description": "short description of module",
+  "authors": [
+    {
+      "name": "David Ford",
+      "email": "magentofu@gmail.com",
+      "homepage": "http://magentofu.com"
+    }
+  ],
+  "require": {
+    "php": "~5.6.0|7.0.2|~7.0.6",
+    "magento/module-ui": "100.1.*"
+  },
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Vendor\\Module\\": ""
+    }
+  }
+}
+```
+
+The final required file is the module.xml file, this is located in `/etc/` directory.
+
+```
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+
+    <module name="Vendor_Module" setup_version="1.0.0">
+        <sequence>
+            <module name="Magento_Ui"/>
+        </sequence>
+    </module>
+</config>
+```
+
+This is it, for a skeleton Magento 2 Module.
+
+
+
+Below is a file structure example of a more complex and complete module.
+
+```
 # required files *
 
 <Magento install directory>/app/
@@ -100,74 +173,3 @@ Configuration files placed in subdirectories (adminhtml, frontend, webapi_rest, 
                                             README.md
                                             
 ```
-
-Next, the module must be registered in the Magento System, this is done with the `ComponentRegistrar` Class in the `registration.php` file in the root of the module directory.
-
-```
-<?php
-
-use \Magento\Framework\Component\ComponentRegistrar;
-
-ComponentRegistrar::register(ComponentRegistrar::MODULE, '<Vendor>_<ModuleName>', __DIR__);
-
-```
-
-After adding the `registration.php` file, the module's `composer.json file must be created.
-
-```
-{
-  "name": "<vendor>/<module>",
-  "description": "short description of module",
-  "authors": [
-    {
-      "name": "David Ford",
-      "email": "magentofu@gmail.com",
-      "homepage": "http://magentofu.com"
-    }
-  ],
-  "require": {
-    "php": "~5.6.0|7.0.2|~7.0.6",
-    "magento/module-ui": "100.1.*"
-  },
-  "type": "magento2-module",
-  "version": "1.0.0",
-  "license": [
-    "OSL-3.0",
-    "AFL-3.0"
-  ],
-  "autoload": {
-    "files": [ "registration.php" ],
-    "psr-4": {
-      "Vendor\\Module\\": ""
-    }
-  }
-}
-```
-
-The final required file is the module.xml file, this is located in `/etc/` directory.
-
-```
-<?xml version="1.0"?>
-
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-
-    <module name="Vendor_Module" setup_version="1.0.0">
-        <sequence>
-            <module name="Magento_Ui"/>
-        </sequence>
-    </module>
-</config>
-```
-
-This is it, for a skeleton Magento 2 Module, lets recap.
-
-```
-<Magento Root>/app/code/Vendor/Module/
-                                |   registration.php
-                                |   composer.json
-                                |
-                                /etc/
-                                    module.xml
-```
-
-That is it, but you will need much more than this to have your module do anything.
