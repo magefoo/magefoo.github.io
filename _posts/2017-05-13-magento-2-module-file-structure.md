@@ -31,7 +31,7 @@ Configuration files placed in subdirectories (adminhtml, frontend, webapi_rest, 
 *It is very important to note that directory and file structure is case sensitive and MUST follow the exact Case which is laid out, also, to note, in Magento 2 Modules, the `/Vendor/Module/` directories are both Capitalized but theme directories ONLY the Vendor is capitalized, the theme name is not `/Vendor/themename/`. Remember themes are under `app/design/` and modules are under `app/code/`*
 
 ```
-# required files `*`
+# required files *
 
 <Magento install directory>/app/
                                 |
@@ -57,8 +57,8 @@ Configuration files placed in subdirectories (adminhtml, frontend, webapi_rest, 
                                             |   |       page_types.xml
                                             |   |       
                                             |   /adminhtml/
-                                            |   |       di.xml*
-                                            |   |       routes.xml*
+                                            |   |       di.xml
+                                            |   |       routes.xml
                                             |   |       events.xml
                                             |   |       menu.xml
                                             |   |       system.xml
@@ -99,7 +99,6 @@ Configuration files placed in subdirectories (adminhtml, frontend, webapi_rest, 
                                             LICENSE_AFL.txt
                                             README.md
                                             
-# `*` required files
 ```
 
 Next, the module must be registered in the Magento System, this is done with the `ComponentRegistrar` Class in the `registration.php` file in the root of the module directory.
