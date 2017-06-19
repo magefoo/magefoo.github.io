@@ -1,8 +1,8 @@
 # Site settings
-title: Magentofu - A professional Blog
+title: Magefoo - A professional Blog
 description: Learn to play nice with Magento.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://magentofu.com" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+url: "http://magefoo.com" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
 username: DFord
