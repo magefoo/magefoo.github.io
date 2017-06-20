@@ -59,8 +59,8 @@ After adding the `registration.php` file, the module's `composer.json file must 
   "authors": [
     {
       "name": "David Ford",
-      "email": "magentofu@gmail.com",
-      "homepage": "http://magentofu.com"
+      "email": "magefoo@gmail.com",
+      "homepage": "http://magefoo.com"
     }
   ],
   "require": {
