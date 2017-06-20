@@ -23,6 +23,11 @@ $bg
 		color main
 		text-decoration none
 		font-size rem(28px)
+		&:after
+			transition all .4s
+			content '</> AD'
+			+above(cut)
+				content 'Magefoo'
 
 // Header Post
 .header-post
