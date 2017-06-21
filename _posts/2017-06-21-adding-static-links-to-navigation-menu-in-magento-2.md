@@ -37,8 +37,8 @@ Our composer.json file
     "authors": [
         {
             "name": "David Ford",
-            "email": "magentofu@gmail.com",
-            "homepage": "http://magentofu.com"
+            "email": "djfordz@gmail.com",
+            "homepage": "http://magefoo.com"
         }
     ],
     "require": {
