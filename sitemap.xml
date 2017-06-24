@@ -1,16 +1,135 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for page in site.pages %}
-        <url>
-            <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
-        </url>
-    {% endfor %}
-    {% for post in site.posts %}
-        <url>
-            <loc>{{ post.url | prepend: site.baseurl | prepend: site.url }}</loc>
-        </url>
-  {% endfor %}
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://magefoo.com/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/magento1/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/magento2/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/quickies/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/about/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/adding-static-links-to-navigation-menu-in-magento-2/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/tags/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/magento-2-module-file-structure/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/magento-1-module-file-structure/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/getting-image-url-for-template-files/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/programmatically-retrieve-store-config-data/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/simple-xml-errors-in-magento-1/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/category/dev/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/adding-log-statements-in-magneto-2/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/category/misc/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/some-things-i-noticed/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/setup-development-environment-for-magento-2/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/create-a-custom-theme-in-magento-2/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/deleting-a-theme-in-magento-2/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/magento-2-theming-part-1/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://magefoo.com/debugging-in-magento-1/</loc>
+  <lastmod>2017-06-24T07:16:07+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
 </urlset>
