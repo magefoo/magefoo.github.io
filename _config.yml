@@ -10,6 +10,7 @@ user_description: Magento Developer
 email: djfordz@gmail.com
 twitter_username: magentofu
 github_username: magefoo
+disqus_username: djfordz
 
 # Build settings
 markdown: kramdown
