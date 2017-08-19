@@ -16,7 +16,7 @@ twitter_text: 'How to use Grunt for Magento 2 Development'
 introduction: 'How to Use Grunt for Magento 2 Development'
 ---
 
-Using Grunt to compile you Less files on the fly is a great tool to use when developing for Magento 2.  It allows you to see changes to CSS immediately, as well as alerts you to the exact code that fails compilation so it can be fixed fast and easy.
+Using Grunt to compile your Less files on the fly is a great tool to use when developing for Magento 2.  It allows you to see changes to CSS immediately, as well as alerts you to the exact code that fails compilation so it can be fixed fast and easy.
 
 Setting up Grunt Tools is pretty straight forward, and described in Magento Dev docs here: [Compile LESS with Grunt](ihttp://devdocs.magento.com/guides/v2.1/frontend-dev-guide/css-topics/css_debug.html)
 
@@ -118,10 +118,12 @@ To get ready to use Grunt watch for live reload capabilities, you need to run `g
 
 ## To use livereload functionality, you must install a browser extension
 
+*If you have a firewall, you must allow port 35729, which is the default port for LiveReload.*
+
 For Chrome install the livereload browser extension from here [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
 
 Once it is installed, you can run `grunt watch` and select the live reload extension button, it should allow you to connect. In Chrome, sometimes you will get an error in console stating failed to connect, simply hard refresh the page a few times until chrome decides to connect properly.
 
-*If you have a firewall, you must allow port 35729, which is the default port.*
+
 
 
