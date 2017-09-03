@@ -35,4 +35,6 @@ However, for emergency situations, like if you already deleted the directory str
 5.  If production mode, deploy static content `bin/magento setup:static-content:deploy` &  recompile `bin/magento setup:di:compile`
 5.  Flush cache `bin/magento cache:flush`
 
+If the theme has a configuration in Magento Admin, then it is important to delete all references to the theme in table `eav_attribute` this table associates any Backend Models with the themes configuration and if the theme has its own Backend Models then the store will error if these are not removed.
+
 *this is not an exhaustive list as there still may be illegitimate theme references in other database tables as well, these are only the one's I know about.*
