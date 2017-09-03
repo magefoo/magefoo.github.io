@@ -20,7 +20,7 @@ introduction: "Pointers when deleting a theme in Magento 2"
 
 I'd like to add before we begin, which trips many people up, because once you create the theme directory structure and load Magento Admin, the directory structure, becomes the theme name, and an entry is created in the database.
 If then, the directory structure is deleted, there are still references to it in the database, which can cause issues if not taken care of properly. So I would like to go over the very first thing you should know when naming your theme, unlike Magento 1,
-the Vendor Namespace will be capitalized <b>but</b> the theme name will be *all lower case*!  Example `app/design/frontend/Magentofu/magentofu/`. This is important, many people capitalize both the Vendor Namespace and the theme name, which then causes issue down the road, they realize there mistake, and delete the directory structure, but then the theme still exists in admin! 
+the Vendor Namespace will be capitalized <b>but</b> the theme name will be *all lower case*!  Example `app/design/frontend/Magefoo/footheme/`. This is important, many people capitalize both the Vendor Namespace and the theme name, which then causes issue down the road, they realize there mistake, and delete the directory structure, but then the theme still exists in admin! 
 
 Arrgghh....If you are that guy, here is how to delete the theme reference in the Magento 2 database as well.
 
