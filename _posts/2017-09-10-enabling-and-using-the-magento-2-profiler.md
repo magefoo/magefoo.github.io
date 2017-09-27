@@ -80,6 +80,10 @@ Common Magento Code Mistakes:
 
 Generally if you see a foreach loop or SQL query that is most likely the issue.
 
+### Using [blackfire.io](https://blackfire.io)
+
+I have been very impressed with blackfire.io profiler. I do recommend using it to profile Magento's sites, it offers many more options and graphs to view the profiled site.
+
 I will be adding to this article in the future so check back often!
 
 
