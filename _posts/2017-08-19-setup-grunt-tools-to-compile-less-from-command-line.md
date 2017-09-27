@@ -122,6 +122,10 @@ To get ready to use Grunt watch for live reload capabilities, you need to run `g
 
 For Chrome install the livereload browser extension from here [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
 
+*NOTE: If you are setting up Grunt tools on a remote server you will need to use [RemoteLiveReload](https://chrome.google.com/webstore/detail/remotelivereload/jlppknnillhjgiengoigajegdpieppei?utm_source=chrome-ntp-icon)*
+
+If on remote server, ensure port 35729 is not blocked by a firewall.
+
 Once it is installed, you can run `grunt watch` and select the live reload extension button, it should allow you to connect. In Chrome, sometimes you will get an error in console stating failed to connect, simply hard refresh the page a few times until chrome decides to connect properly.
 
 
