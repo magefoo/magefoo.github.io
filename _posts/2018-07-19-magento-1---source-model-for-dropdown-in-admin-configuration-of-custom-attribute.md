@@ -71,6 +71,7 @@ First add the source_model to your `etc/system.xml` file.
 ```
 
 In the above example I want to show a dropdown of a product attribute. So I set `<frontend_type>select</frontend_type>` and `<source_model>filoupsell/system_config_source_year</source_model>` 
+
 NOTE: filoupsell is the shortname of the module in `config.xml` and `system_config_source_year` is the directory structure or path under Model so your file would be `Model/System/Config/Source/Year.php`.
 
 Then in your file `Year.php` you would have the following code as an example I am pulling a product attribute called `year`.
@@ -114,4 +115,4 @@ class Filofax_Upsells_Model_System_Config_Source_Year
 
 As you can see, I am using the `eav/entity_attribute` model to load the attribute by attribute code. Then returning the attribute options to `toOptionArray()` which is then called by Magento in configuration to list the options.
 
-![Magento Module Configuration Dropdown Menu](assets/img/magento_configuration_module_settings.png)
+![Magento Module Configuration Dropdown Menu](http://magefoo.com/assets/img/magento_configuration_module_settings.png)
