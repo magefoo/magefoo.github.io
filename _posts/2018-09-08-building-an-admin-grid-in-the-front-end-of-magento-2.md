@@ -187,7 +187,7 @@ class InstallSchema implements InstallSchemaInterface
 }
 ```
 
-The `InstallSchema.php` script is pretty straight forward and self explainatory. We implement the `InstallSchemaInterface`, create the `public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)` as required by the interface, we start the setup by calling `$setup->startSetup()`, we build our query with `$setup->getConnection()->newTable()->addColumn()->setComment()`methods, we actually push the create query with `$setup->getConnection()->createTable($table)` and finally call `$setup->endSetup()`;
+The `InstallSchema.php` script is pretty straight forward and self explanatory. We implement the `InstallSchemaInterface`, create the `public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)` as required by the interface, we start the setup by calling `$setup->startSetup()`, we build our query with `$setup->getConnection()->newTable()->addColumn()->setComment()`methods, we actually push the create query with `$setup->getConnection()->createTable($table)` and finally call `$setup->endSetup()`;
 
 The installSchema script is all we need to build the table we need, it is a lot simpler than Magento 1 where we have to add a bunch of setup options in config xml. Magento 2 is really nice in that the file structure is integral to the module whereas Magento 1, you have to spell out the file structure in config file.
 
@@ -513,7 +513,7 @@ We create a file named `app/code/Dford/Geoip/view/frontend/layout/customer_accou
 </page>
 ```
 
-Not much to point out in this file, it is all pretty self-explainatory. However, this is where you will declare your ViewModel in arguments tag. the block type is `Magento\Framework\View\Element\Template` the template name is `Dford_Geoip::geoip_login.phtml` and we add arguments `name=view_model` and the class of the View Model `Dford\Geoip\ViewModel\LoginHistory`
+Not much to point out in this file, it is all pretty self-explanatory. However, this is where you will declare your ViewModel in arguments tag. the block type is `Magento\Framework\View\Element\Template` the template name is `Dford_Geoip::geoip_login.phtml` and we add arguments `name=view_model` and the class of the View Model `Dford\Geoip\ViewModel\LoginHistory`
 
 Next comes the template file which will be placed in `app/code/Dford/Geoip/view/frontend/templates/geoip_login.phtml`
 
