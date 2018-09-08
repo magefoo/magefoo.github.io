@@ -18,7 +18,7 @@ twitter_text: "Sample Module to build admin grid for use on frontend"
 introduction: "Sample Module to build admin grid for use on frontend"
 ---
 
-<img src="assets/img/ui_preview2.png" alt="ui preview" />
+<img src="http://magefoo.com/assets/img/ui_preview2.png" alt="ui preview" />
 
 Recently, I had the opportunity to take a development test for a very prestigous Magento Agency. I would say for the past year or so all my work has been geared towards Magento 1, so my Magento 2 skillset has been whithering from disuse simply due to my current employer's business needs. All their current shops are built on M1--Although we will be converting them to M2 this year. This was an opportunity to build something interesting in Magento 2 and dust off the Magento 2 skills a bit.
 
