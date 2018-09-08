@@ -33,13 +33,7 @@ To start off, I will list the specifications laid out for the test.
 5. Bonus 2: Add a button to 3 above that allows the customer to purge their own login history.  You might want to add checkboxes to the rows of table to allow you to purge certain rows, with a Select All ability.
 6. Bonus 3: Add your own cool additional feature, if you want and have the time.
 
-As you can see by the speicifications, this test was pretty in depth.
-
-One thing I wanted to do right off the bat, is use as many of Magento 2's UiComponents as possible to save me the work of building the UX and UX functionality.
-
-I thought the Admin Grid would be perfect for listing the table of IP's, plus all the functionality for delete, pagination, list, etc would be built in!
-
-So I this is what I was going to do, bring the admin grid to the frontend.
+As you can see by the speicifications, this test was pretty in depth. One thing I wanted to do right off the bat, is use as many of Magento 2's UiComponents as possible to save me the work of building the UX and UX functionality. I thought the Admin Grid would be perfect for listing the table of IP's, plus all the functionality for delete, pagination, list, etc would be built in! So this is what I was going to do, bring the admin grid to the frontend.
 
 The module I built in its entirety is here: [https://github.com/djfordz/geoip](https://github.com/djfordz/geoip)
 
