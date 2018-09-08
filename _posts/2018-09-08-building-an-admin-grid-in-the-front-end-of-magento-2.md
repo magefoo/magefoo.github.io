@@ -801,4 +801,6 @@ The following blog post describes how to add the Controller and css to allow the
 
 and there you have it
 
+<img src="http://magefoo.com/assets/img/ui_preview2.png" alt="ui preview" />
+
 <img src="http://magefoo.com/assets/img/ui_preview1.png" alt="ui preview" />
