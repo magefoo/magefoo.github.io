@@ -2,7 +2,7 @@
 layout: post
 title: "Building an Admin Grid in the Front End of Magento 2"
 date: 2018-09-08 19:15:30
-image: '/assets/img/'
+image: '/assets/img/ui_preview2.png'
 description: "Easy way to bring the Admin Grid to the Frontend"
 main-class: 'dev'
 color: '#000000'
@@ -812,4 +812,4 @@ The following blog post describes how to add the Controller and css to allow the
 
 and there you have it
 
-<img src="http://magefoo.com/img/ui_preview.png" />
+<img src="http://magefoo.com/assets/img/ui_preview1.png" />
