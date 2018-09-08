@@ -18,25 +18,20 @@ twitter_text: "Sample Module to build admin grid for use on frontend"
 introduction: "Sample Module to build admin grid for use on frontend"
 ---
 
+<img src="assets/img/ui_preview2.png" alt="ui preview" />
+
 Recently, I had the opportunity to take a development test for a very prestigous Magento Agency. I would say for the past year or so all my work has been geared towards Magento 1, so my Magento 2 skillset has been whithering from disuse simply due to my current employer's business needs. All their current shops are built on M1--Although we will be converting them to M2 this year. This was an opportunity to build something interesting in Magento 2 and dust off the Magento 2 skills a bit.
 
 To start off, I will list the specifications laid out for the test.
 
-1.       Add a new table that remembers the IP, User Agent, and datetime of every login of each Customer.
-
-2.       Add to the Account Dashboard the IP and datetime of their most recent login before the current one.
-
-3.       Add to the customer account section a new link on the account navigation that goes to a page that shows a table displaying the customer's login history.
-
-1.       Add pagination to this table, similar to the pagination you might find on catalog/search pages.
-
-2.       Make the columns of this table sortable by IP, User Agent, and datetime.
-
-4.       Bonus 1: Add in geoip lookup to determine the location of the IP of each login, and add that information to 1 and 3 above.
-
-5.       Bonus 2: Add a button to 3 above that allows the customer to purge their own login history.  You might want to add checkboxes to the rows of table to allow you to purge certain rows, with a Select All ability.
-
-6.       Bonus 3: Add your own cool additional feature, if you want and have the time.
+1. Add a new table that remembers the IP, User Agent, and datetime of every login of each Customer.
+2. Add to the Account Dashboard the IP and datetime of their most recent login before the current one.
+3. Add to the customer account section a new link on the account navigation that goes to a page that shows a table displaying the customer's login history.
+1. Add pagination to this table, similar to the pagination you might find on catalog/search pages.
+2. Make the columns of this table sortable by IP, User Agent, and datetime.
+4. Bonus 1: Add in geoip lookup to determine the location of the IP of each login, and add that information to 1 and 3 above.
+5. Bonus 2: Add a button to 3 above that allows the customer to purge their own login history.  You might want to add checkboxes to the rows of table to allow you to purge certain rows, with a Select All ability.
+6. Bonus 3: Add your own cool additional feature, if you want and have the time.
 
 As you can see by the speicifications, this test was pretty in depth.
 
@@ -812,4 +807,4 @@ The following blog post describes how to add the Controller and css to allow the
 
 and there you have it
 
-<img src="http://magefoo.com/assets/img/ui_preview1.png" />
+<img src="http://magefoo.com/assets/img/ui_preview1.png" alt="ui preview" />
