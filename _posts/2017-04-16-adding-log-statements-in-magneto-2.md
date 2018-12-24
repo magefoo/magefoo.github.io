@@ -30,14 +30,42 @@ Normally, if the logger is already injected, I'll just hijack it and use it:
 $this->logger->debug($var);
 ```
 
-If not, just declare it and use it:
+If not, just declare it as a dependancy in the constructor of the class and use it:
 
 ```
-\Magento\Framework\App\ObjectManager::getInstance()
-    ->get('Psr\Log\LoggerInterface')->debug('message');
+protected $logger;
+
+public function __construct(\Psr\Log\LoggerInterface $logger)
+{
+    $this->logger = $logger
+}
 ```
 
-But what if you are outside the scope of `\Psr\Log\`? Use the simple, inject `\Zend\Log\` like below: 
+Then you can use where ever you need to log like so:
+
+```
+$this->logger->debug($variable);
+```
+
+There are multiple log levels associated with Psr Logger they can be found in `LoggerInterface` and are listed below:
+
+```
+public function emergency($message, array $context = array());
+public function alert($message, array $context = array());
+public function critical($message, array $context = array());
+public function error($message, array $context = array());
+public function warning($message, array $context = array());
+public function notice($message, array $context = array());
+public function info($message, array $context = array());
+public function debug($message, array $context = array());
+public function log($level, $message, array $context = array());
+```
+
+Also, keep in mind Psr Logger can only log strings not arrays or objects. One can get around this by using `print_r($array, true)` as $message to print arrays, this can also be done with the Zend Logger below as well.
+
+
+My favorite way to log however, especially during troubleshooting is as follows:
+
 
 ```
 $writer = new \Zend\Log\Writer\Stream(BP . '/var/log/test.log');
@@ -45,6 +73,7 @@ $logger = new \Zend\Log\Logger();
 $logger->addWriter($writer);
 $logger->info('Your text message');
 ```
+You can also use the Zend Log when you are outside the scope of `\Psr\Log\`.
 
 How do you know if the logger is already injected?
 
@@ -81,3 +110,10 @@ If this is the case, then just hijack it and use:
 $this->logger->debug($var);
 ```
 
+Lastly, to ensure logs are translated accoringly, wrapping them in the `__()` function is always a good idea and can be done as follows:
+
+```
+$this->logger->critical(__("Message to log Error: %1", $exception->getMessage()));
+```
+
+The above will translate the message and also parse the getMessage() function if you add it in a catch block.
