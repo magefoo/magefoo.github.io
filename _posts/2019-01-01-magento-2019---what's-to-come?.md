@@ -1,13 +1,17 @@
 ---
 layout: post
-title: "Magento 2019 - What's to come?"
+title: "Magento - What's to come in 2019"
 date: 2019-01-01 08:17:05
 image: '/assets/img/'
 description: "Magento in 2019 - The New Magento Landscape"
 main-class: M2
-color: "#222"
-tags: "Magento 2", "Adobe", "React", "PWA"
-categories: "Magento 2"
+color: #222
+tags: 
+  - Magento 2
+  - Adobe
+  - React
+categories: 
+  - Magento 2
 twitter_text: "The New Magento Landscape"
 introduction: "The New Magento Landscape in 2019"
 ---
@@ -23,3 +27,5 @@ The story around the community is Magento is dead, at least as far as it being a
 It is a scary time for Magento developers for sure.
 
 It will be an interesting year for Magento, The Magento Community, and the Store Owners as well as the Developers.
+
+Get Ready.
