@@ -4,7 +4,7 @@ title: "Magento - What's to come in 2019"
 date: 2019-01-01 08:17:05
 image: '/assets/img/'
 description: "Magento in 2019 - The New Magento Landscape"
-main-class: M2
+main-class: m2
 color: 
 tags: 
   - Magento 2
