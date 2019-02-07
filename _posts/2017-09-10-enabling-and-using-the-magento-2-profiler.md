@@ -29,21 +29,47 @@ Performance is another metric used by consumers to judge a store. If the site is
 
 Magento 2 has a great builtin profiler, much better than Magento 1's. If using Nginx, it is preferred to enable the profiler by doing the following:
 
-In the file `/etc/nginx/fastcgi_params` add the following
+In the file `nginx.conf` or other `.conf` file where your Magento nginx config resides, add the following directly under  `location ~ (index|get|static|report|404|503)\.php$ {`
+
+so it looks like below:
 
 ```
-fastcgi_param MAGE_PROFILER $MAGE_PROFILER;
-fastcgi_param MAGE_MODE $MAGE_MODE;
+# PHP entry point for main application
+location ~ (index|get|static|report|404|503)\.php$ {
+    try_files $uri =404;
+    fastcgi_pass   fastcgi_backend;
+    fastcgi_buffers 1024 4k;
+
+    fastcgi_read_timeout 600s;
+    fastcgi_connect_timeout 600s;
+    fastcgi_param MAGE_PROFILER $MAGE_PROFILER;
+    fastcgi_param MAGE_MODE $MAGE_MODE;
+
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+
+
+
 ```
 
-next, add the following to your site's nginx conf file:
+next, add the following to your site's `nginx.conf` file under the server block for that site:
 
 ```
+server {
+listen 80;
+listen 443 ssl;
+ssl_certificate /etc/ssl/certs/local/local.pem;
+ssl_certificate_key /etc/ssl/certs/local/local.key;
+server_name example.com;
 set $MAGE_MODE developer;
 set $MAGE_PROFILER html;
+include /example.com/html/www/nginx.conf;
+}
 ```
 
-restart nginx;
+reload nginx;
 
 We have set the site in developer mode and enabled the profiler in Nginx.
 
